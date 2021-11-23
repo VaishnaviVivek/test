@@ -1,0 +1,92 @@
+Health Check URL- https://2fholtzbgc.execute-api.ap-southeast-1.amazonaws.com/prod/health
+
+Method - GET
+
+expected response - Status:200 (OK)
+
+-----------------------------------------------------------------------------------------------------------------
+
+Login URL- https://2fholtzbgc.execute-api.ap-southeast-1.amazonaws.com/prod/userlogin?email=vai@gmail.com&password=vaishu
+
+Method- POST
+
+expected response - {
+    "Status": "Access Granted"
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+Register URL- https://2fholtzbgc.execute-api.ap-southeast-1.amazonaws.com/prod/userregister
+
+Method - POST
+
+JSON content - {
+  "email":"xyz@gmail.com",
+  "name":"Bhavi",
+  "age":11,
+  "password":"pass"
+}
+
+expected response - {
+    "Status": "User Registered Successfully"
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+To view all records URL- https://2fholtzbgc.execute-api.ap-southeast-1.amazonaws.com/prod/getallrecords
+
+Method - GET
+
+expected response - 
+{
+    "users": [{
+        "password": "vaishu",
+        "email": "vai@gmail.com",
+        "name": "vaishu",
+        "age": "21"
+    }, {
+        "email": "aased@gmail",
+        "password": "pass"
+    }, {
+        "password": "qa",
+        "email": "qa@1",
+        "name": "qa",
+        "age": "10"
+    }, {
+        "password": "qqq",
+        "email": "qqq@gmail.com",
+        "name": "qqq",
+        "age": "10"
+    }, {
+        "password": "pass",
+        "email": "asd@1",
+        "name": "asd",
+        "age": 50
+    }, {
+        "password": "a",
+        "email": "a@1",
+        "name": "aa",
+        "age": "10"
+    }, {
+        "password": "pass",
+        "email": "xyz@gmail.com",
+        "name": "Bhavi",
+        "age": 11
+    }]
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+Using Filter URL- https://2fholtzbgc.execute-api.ap-southeast-1.amazonaws.com/prod/filterusers?age=21
+
+Method - GET
+
+expected response - {
+    "users": [{
+        "password": "vaishu",
+        "email": "vai@gmail.com",
+        "name": "vaishu",
+        "age": "21"
+    }]
+}
+
